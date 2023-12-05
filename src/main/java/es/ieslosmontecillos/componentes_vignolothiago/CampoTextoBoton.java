@@ -7,13 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CampoTextoBoton extends HBox
+public class CampoTextoBoton extends HBox implements Initializable
 {
     public CampoTextoBoton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CampoTextoBoton.fxml"));
@@ -27,19 +28,16 @@ public class CampoTextoBoton extends HBox
         }
     }
 
-    @javafx.fxml.FXML
+    @FXML
     private TextField textField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
+
+    public String getTextField() {
+        return textField.textProperty().get();
     }
 
-    public String getText() {
-        return textProperty().get();
-    }
-
-    public void setText(String value) {
-        textProperty().set(value);
+    public void setTextField(String value) {
+        textField.textProperty().set(value);
     }
 
     public StringProperty textProperty() {
@@ -63,4 +61,9 @@ public class CampoTextoBoton extends HBox
         return OnAction.get();
     }
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

@@ -4,9 +4,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 
-<fx:root spacing="5.0" type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
-   <children>
-      <TextField fx:id="textField" />
-      <Button mnemonicParsing="false"  text="Guardar" />
-   </children>
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml">
+   <TextField fx:id="textField"/>
+   <Button text="Click Me" onAction="#doSomething"/>
 </fx:root>
